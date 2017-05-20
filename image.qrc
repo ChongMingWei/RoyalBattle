@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/start.jpg</file>
+        <file>image/home2.jpg</file>
+        <file>image/home.jpg</file>
+        <file>image/castle_user.png</file>
+        <file>image/castle_com.png</file>
+        <file>image/battlemap2.jpg</file>
+        <file>image/battlemap.png</file>
+        <file>image/arrow_r.png</file>
+        <file>image/arrow_l.png</file>
+        <file>image/knight.png</file>
+        <file>image/archer.png</file>
+        <file>image/rogue.png</file>
+        <file>image/sniper.png</file>
+        <file>image/knight_icon.png</file>
+        <file>image/archer_icon.png</file>
+        <file>image/sniper_icon.png</file>
+        <file>image/rogue_icon.png</file>
+        <file>image/loss.jpg</file>
+        <file>image/win.jpg</file>
+        <file>image/knight_c.png</file>
+        <file>image/archer_c.png</file>
+        <file>image/sniper_c.png</file>
+        <file>image/rogue_c.png</file>
+        <file>image/bgm.mp3</file>
+    </qresource>
+</RCC>
