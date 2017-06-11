@@ -2,7 +2,7 @@
 #include "Game.h"
 
 Game * game;
-
+int factor = 0;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

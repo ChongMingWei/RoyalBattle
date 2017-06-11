@@ -31,7 +31,44 @@ SOURCES += main.cpp \
     Com_Castle.cpp \
     Com_Knight.cpp \
     Com_Rogue.cpp \
-    Com_Sniper.cpp
+    Com_Sniper.cpp \
+    Stop.cpp \
+    Hero.cpp \
+    Bullet.cpp \
+    Autocannon.cpp \
+    Machinegun.cpp \
+    Paladin.cpp \
+    Crossbowman.cpp \
+    Warrior.cpp \
+    Berserker.cpp \
+    Spearman.cpp \
+    Heavyspearman.cpp \
+    Shieldbearer.cpp \
+    Heavyshieldbearer.cpp \
+    Bomber.cpp \
+    Bigbomber.cpp \
+    Dragon.cpp \
+    Vampire.cpp \
+    Fire_element.cpp \
+    Earth_element.cpp \
+    Water_element.cpp \
+    BuildBigbomberIcon.cpp \
+    BuildBomberIcon.cpp \
+    BuildCrossbowmanIcon.cpp \
+    BuildDragonIcon.cpp \
+    BuildEarth_elementIcon.cpp \
+    BuildFre_elementIcon.cpp \
+    BuildHeavyshieldbearerIcon.cpp \
+    BuildHeavyspearmanIcon.cpp \
+    BuildMachinegunIcon.cpp \
+    BuildPaladinIcon.cpp \
+    BuildShieldbearerIcon.cpp \
+    BuildSpearmanIcon.cpp \
+    BuildBerserkerIcon.cpp \
+    BuildAutocannonIcon.cpp \
+    BuildVampireIcon.cpp \
+    BuildWarriorIcon.cpp \
+    BuildWater_elementIcon.cpp
 
 HEADERS  += \
     Game.h \
@@ -51,7 +88,44 @@ HEADERS  += \
     Com_Knight.h \
     Com_Rogue.h \
     Com_Sniper.h \
-    Com_Archer.h
+    Com_Archer.h \
+    Stop.h \
+    Hero.h \
+    Bullet.h \
+    Autocannon.h \
+    Machinegun.h \
+    Paladin.h \
+    Crossbowman.h \
+    Warrior.h \
+    Berserker.h \
+    Spearman.h \
+    Heavyspearman.h \
+    Shieldbearer.h \
+    Heavyshieldbearer.h \
+    Bomber.h \
+    Bigbomber.h \
+    Dragon.h \
+    Vampire.h \
+    Fire_element.h \
+    Earth_element.h \
+    Water_element.h \
+    BuildBigbomberIcon.h \
+    BuildBomberIcon.h \
+    BuildCrossbowmanIcon.h \
+    BuildDragonIcon.h \
+    BuildEarth_elementIcon.h \
+    BuildFire_elementIcon.h \
+    BuildHeavyshieldbearerIcon.h \
+    BuildHeavyspearmanIcon.h \
+    BuildMachinegunIcon.h \
+    BuildPaladinIcon.h \
+    BuildShieldbearerIcon.h \
+    BuildSpearmanIcon.h \
+    BuildBerserkerIcon.h \
+    BuildAutocannonIcon.h \
+    BuildVampireIcon.h \
+    BuildWarriorIcon.h \
+    BuildWater_elementIcon.h
 
 FORMS    += mainwindow.ui
 
@@ -66,4 +140,5 @@ DISTFILES += \
     image/castle_user.png \
     image/castle_com.png \
     image/battlemap.png \
-    image/arrow.png
+    image/arrow.png \
+    image/fire.gif

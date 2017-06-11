@@ -11,7 +11,6 @@ public:
     Arrow(QGraphicsItem *parent = 0);
 public slots:
     void move();
-private:
 };
 
 #endif // ARROW_H

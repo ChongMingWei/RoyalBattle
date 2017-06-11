@@ -1,0 +1,6 @@
+#include "BuildAutocannonicon.h"
+
+BuildAutocannonIcon::BuildAutocannonIcon()
+{
+
+}

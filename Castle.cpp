@@ -1,4 +1,5 @@
 #include "Castle.h"
+#include "Earth_element.h"
 #include "Arrow.h"
 #include "Game.h"
 #include "Com_Knight.h"
@@ -14,23 +15,24 @@
 #include <QTimer>
 #include <QDebug>
 #include <QGraphicsScene>
+
 extern Game * game;
 
 Castle::Castle(QGraphicsItem * parent):QObject(),QGraphicsPixmapItem(parent)
 {
     //set the health of the castle
-    health =20;
+    health =30;
     setPixmap(QPixmap(":/image/castle_com.png"));
 
     //creates points vector
     QVector<QPointF> points;
-    points << QPoint(1,0)<< QPoint(2,0)
+ points    << QPoint(1,0)<< QPoint(2,0)
                  << QPoint(3,1)<< QPoint(3,2)
-                 << QPoint(2,3)<< QPoint(1,3)
-                 << QPoint(0,2)<< QPoint(0,1);
+                 << QPoint(2,3)<< QPoint(1,3);
+
 
     //scale points
-    int SCALE_FACTOR =160;
+    int SCALE_FACTOR =140;
     for(size_t i = 0,n = points.size();i < n;++i)
         points[i] *= SCALE_FACTOR;
 
@@ -98,6 +100,10 @@ void Castle::acquire_target()
         {
             --health;
         }
+         else if(typeid(*(colliding_champions[i])) == typeid(Earth_element))
+         {
+             ++health;
+         }
 
         if(health == 0)
         {

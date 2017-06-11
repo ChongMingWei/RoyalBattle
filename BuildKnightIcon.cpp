@@ -5,7 +5,7 @@ extern Game * game;
 
 BuildKnightIcon::BuildKnightIcon(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
     {
-        setPixmap(QPixmap(":/image/knight_icon.png"));
+        setPixmap(QPixmap(":/image/championicon/knight_icon.png"));
     }
 void BuildKnightIcon::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {

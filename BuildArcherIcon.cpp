@@ -5,7 +5,7 @@ extern Game * game;
 
 BuildArcherIcon::BuildArcherIcon(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
     {
-        setPixmap(QPixmap(":/image/archer_icon.png"));
+        setPixmap(QPixmap(":/image/championicon/archer_icon.png"));
     }
 void BuildArcherIcon::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {

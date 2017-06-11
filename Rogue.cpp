@@ -1,4 +1,5 @@
 #include "Rogue.h"
+#include "Water_element.h"
 #include "Com_Castle.h"
 #include <QPixmap>
 #include <QTimer>
@@ -11,10 +12,11 @@
 #include "Com_Sniper.h"
 #include <qdebug.h>
 
+extern int factor;
 Rogue::Rogue(QGraphicsItem *parent)
 {
-    //set the health of a rogue3
-    health =5;
+    //set the health of a rogue
+    health =12;
 
     //set graph
     setPixmap(QPixmap(":/image/rogue.png"));
@@ -40,25 +42,29 @@ void Rogue::move_forward()
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Castle))
         {
-            health--;
+            health-=2;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Archer))
         {
-            health--;
+            health-=3;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Knight))
         {
-            health-=2;
+            health-=4;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Sniper))
         {
-            health-=2;
+            health-=5;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Rogue))
         {
-            health--;
+            health-=2;
         }
-        if(health == 0)
+        else if (typeid(*(colliding_items[i])) == typeid(Water_element))
+        {
+            ++health;
+        }
+        if(health <= 0)
         {
             scene()->removeItem(this);
             delete this;
@@ -69,25 +75,25 @@ void Rogue::move_forward()
     if(this->x()<650)
     {
         if(this->y()<80)
-            setPos(x()+9,y()+12);
+            setPos(x()+6,y()+8);
         else if(this->y()<360&&this->y()>=80)
-            setPos(x()+15,y());
+            setPos(x()+10,y());
         else if(this->y()<475&&this->y()>=360)
-            setPos(x()+9,y()+12);
+            setPos(x()+6,y()+8);
         else if(this->y()<700&&this->y()>=475)
-            setPos(x()+15,y());
+            setPos(x()+10,y());
         else if(this->y()>=700)
-            setPos(x()+9,y()-12);
+            setPos(x()+6,y()-8);
     }
     else if(this->x()>=650&&this->x()<750)
-        setPos(x()+15,y());
+        setPos(x()+10,y());
     else if(x()>=750&&x()<1200)
     {
          if(this->y()>=80&&this->y()<400)
-             setPos(x()+9,y()+12);
+             setPos(x()+6,y()+8);
          else if(this->y() >= 400 && this->y()<450)
-            setPos(x()+15,y());
+            setPos(x()+10,y());
         else  if(this->y()>=450&&this->y()<=700)
-             setPos(x()+9,y()-12);
+             setPos(x()+6,y()-8);
     }
 }

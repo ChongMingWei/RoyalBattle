@@ -12,7 +12,6 @@
 #include "Com_Rogue.h"
 #include "Com_Sniper.h"
 #include "Castle.h"
-//#include "Suffer.h"
 #include <QGraphicsScene>
 
 Arrow::Arrow(QGraphicsItem * parent)
@@ -22,7 +21,7 @@ Arrow::Arrow(QGraphicsItem * parent)
     //connect a timer to move()
     QTimer * move_timer = new QTimer (this);
     connect(move_timer,SIGNAL(timeout()),this,SLOT(move()));
-    move_timer->start(50);  //every 50ms
+    move_timer->start(100);  //every 100ms
 }
 
 void Arrow::move()

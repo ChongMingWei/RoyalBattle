@@ -1,4 +1,5 @@
 #include "Knight.h"
+#include "Water_element.h"
 #include "Com_Castle.h"
 #include <QPixmap>
 #include <QTimer>
@@ -12,8 +13,8 @@
 
 Knight::Knight(QGraphicsItem *parent)
 {
-    //set the health of a knight
-    health =10;
+    //set the health
+    health =16;
 
     //set graph
     setPixmap(QPixmap(":/image/knight.png"));
@@ -36,25 +37,29 @@ void Knight::move_forward()
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Castle))
         {
-            health--;
+            health-=2;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Archer))
         {
-            health--;
+            health-=3;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Knight))
         {
-            health--;
+            health-=4;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Sniper))
         {
-            health--;
+            health-=5;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Com_Rogue))
         {
-            health--;
+            health-=2;
         }
-        if(health == 0)
+        else if (typeid(*(colliding_items[i])) == typeid(Water_element))
+        {
+            ++health;
+        }
+        if(health <= 0)
         {
             scene()->removeItem(this);
             delete this;

@@ -5,7 +5,7 @@ extern Game * game;
 
 BuildRogueIcon::BuildRogueIcon(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
     {
-        setPixmap(QPixmap(":/image/rogue_icon.png"));
+        setPixmap(QPixmap(":/image/championicon/rogue_icon.png"));
     }
 void BuildRogueIcon::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {

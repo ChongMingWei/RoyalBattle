@@ -4,16 +4,27 @@
 #include <QTimer>
 #include <QList>
 #include "Arrow.h"
+#include "Bullet.h"
 #include <QGraphicsScene>
 #include "Knight.h"
 #include "Archer.h"
 #include "Rogue.h"
 #include "Sniper.h"
+#include "Berserker.h"
+#include "Crossbowman.h"
+#include "Dragon.h"
+#include "Fire_element.h"
+#include "Heavyspearman.h"
+#include "Paladin.h"
+#include "Spearman.h"
+#include "Vampire.h"
+#include "Warrior.h"
+#include "Hero.h"
 
 Com_Rogue::Com_Rogue(QGraphicsItem *parent)
 {
-    //set the health of an archer
-    health =5;
+    //set the health of a rogue
+    health =12;
     //set graph
     setPixmap(QPixmap(":/image/rogue_c.png"));
     setPos(1000,220);
@@ -32,6 +43,10 @@ void Com_Rogue::move_forward()
         if(typeid(*(colliding_items[i])) == typeid(Arrow))
         {
             --health;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Bullet))
+        {
+            health-=2;
         }
         else if (typeid(*(colliding_items[i])) == typeid(Castle))
         {
@@ -53,20 +68,63 @@ void Com_Rogue::move_forward()
         {
             health--;
         }
-        if(health == 0)
+        else if (typeid(*(colliding_items[i])) == typeid(Hero))
+        {
+            health--;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Fire_element))
+        {
+            health--;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Warrior))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Berserker))
+        {
+            health-=4;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Dragon))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Crossbowman))
+        {
+            health-=4;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Paladin))
+        {
+            health-=5;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Spearman))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Heavyspearman))
+        {
+            health-=4;
+        }
+        else if (typeid(*(colliding_items[i])) == typeid(Vampire))
+        {
+            health-=3;
+        }
+        if(health <= 0)
         {
             scene()->removeItem(this);
             delete this;
             return;
          }
     }
+    if(this->x()>=750 &&this->x()<=820)
+           --health;
+
     if(this->x()>=680)
-        setPos(x()-15,y());
+        setPos(x()-10,y());
     else if(this->y()<430)
-         setPos(x()-9,y()+12);
+         setPos(x()-6,y()+8);
     else if(this->y()>430)
-           setPos(x()-9,y()-12);
+           setPos(x()-6,y()-8);
     else if(this->y()==430&&this->x()>220)
-        setPos(x()-15,y());
+        setPos(x()-10,y());
 }
 

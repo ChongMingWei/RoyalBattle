@@ -1,4 +1,19 @@
 #include "Com_Castle.h"
+#include "Berserker.h"
+#include "Bomber.h"
+#include "Bigbomber.h"
+#include "Crossbowman.h"
+#include "Dragon.h"
+#include "Earth_element.h"
+#include "Fire_element.h"
+#include "Heavyshieldbearer.h"
+#include "Heavyspearman.h"
+#include "Paladin.h"
+#include "Spearman.h"
+#include "Shieldbearer.h"
+#include "Vampire.h"
+#include "Water_element.h"
+#include "Warrior.h"
 #include "Arrow.h"
 #include "Game.h"
 #include "Knight.h"
@@ -18,18 +33,17 @@ extern Game * game;
 Com_Castle::Com_Castle(QGraphicsItem * parent):QObject(),QGraphicsPixmapItem(parent)
 {
     //set the health of the castle
-        health = 20;
+        health =30;
         setPixmap(QPixmap(":/image/castle_user.png"));
 
         //creates points vector
         QVector<QPointF> points;
         points << QPoint(1,0)<< QPoint(2,0)
-                     << QPoint(3,1)<< QPoint(3,2)
                      << QPoint(2,3)<< QPoint(1,3)
                      << QPoint(0,2)<< QPoint(0,1);
 
         //scale points
-        int SCALE_FACTOR =160;
+        int SCALE_FACTOR =140;
         for(size_t i = 0,n = points.size();i < n;++i)
             points[i] *= SCALE_FACTOR;
 
@@ -101,6 +115,42 @@ void Com_Castle::acquire_target()
         {
             health-=2;
         }
+        else if (typeid(*(colliding_champions[i])) == typeid(Bomber))
+        {
+            health-=2;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Bigbomber))
+        {
+            health-=4;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Warrior))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Berserker))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Dragon))
+        {
+            health-=2;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Crossbowman))
+        {
+            health-=3;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Paladin))
+        {
+            health-=4;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Spearman))
+        {
+            health-=2;
+        }
+        else if (typeid(*(colliding_champions[i])) == typeid(Heavyspearman))
+        {
+            health-=3;
+        }
         if(health == 0)
         {
                endgame();
@@ -124,6 +174,21 @@ void Com_Castle::acquire_target()
         Archer *archer = dynamic_cast<Archer *>(colliding_items[i]);
         Rogue *rogue = dynamic_cast< Rogue *>(colliding_items[i]);
         Sniper *sniper = dynamic_cast< Sniper *>(colliding_items[i]);
+        Warrior *warrior = dynamic_cast< Warrior *>(colliding_items[i]);
+        Berserker *berserker = dynamic_cast< Berserker  *>(colliding_items[i]);
+        Fire_element *fire_element = dynamic_cast< Fire_element *>(colliding_items[i]);
+        Earth_element *earth_element = dynamic_cast< Earth_element *>(colliding_items[i]);
+        Water_element *water_element = dynamic_cast< Water_element *>(colliding_items[i]);
+        Dragon *dragon = dynamic_cast< Dragon *>(colliding_items[i]);
+        Crossbowman *crossbowman = dynamic_cast<Crossbowman *>(colliding_items[i]);
+        Paladin *paladin = dynamic_cast< Paladin *>(colliding_items[i]);
+        Spearman *spearman = dynamic_cast<Spearman *>(colliding_items[i]);
+        Heavyshieldbearer *heavyspearman = dynamic_cast<  Heavyshieldbearer *>(colliding_items[i]);
+        Shieldbearer *shieldbearer = dynamic_cast< Shieldbearer *>(colliding_items[i]);
+        Heavyshieldbearer *heavyshieldbearer = dynamic_cast< Heavyshieldbearer *>(colliding_items[i]);
+        Vampire *vampire = dynamic_cast< Vampire *>(colliding_items[i]);
+        Bomber *bomber = dynamic_cast< Bomber *>(colliding_items[i]);
+        Bigbomber *bigbomber = dynamic_cast< Bigbomber *>(colliding_items[i]);
         if (knight)
         {
             double this_dist = distanceTo(knight);
@@ -157,6 +222,156 @@ void Com_Castle::acquire_target()
         else if(sniper)
         {
             double this_dist = distanceTo(sniper);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(warrior)
+        {
+            double this_dist = distanceTo(warrior);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(berserker)
+        {
+            double this_dist = distanceTo(berserker);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(fire_element)
+        {
+            double this_dist = distanceTo(fire_element);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(earth_element)
+        {
+            double this_dist = distanceTo(earth_element);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(water_element)
+        {
+            double this_dist = distanceTo(water_element);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(dragon)
+        {
+            double this_dist = distanceTo(dragon);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(crossbowman)
+        {
+            double this_dist = distanceTo(crossbowman);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(paladin)
+        {
+            double this_dist = distanceTo(paladin);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(spearman)
+        {
+            double this_dist = distanceTo(spearman);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(heavyspearman)
+        {
+            double this_dist = distanceTo(heavyspearman);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(shieldbearer)
+        {
+            double this_dist = distanceTo(shieldbearer);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(heavyshieldbearer)
+        {
+            double this_dist = distanceTo(heavyshieldbearer);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(vampire)
+        {
+            double this_dist = distanceTo(vampire);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(bomber)
+        {
+            double this_dist = distanceTo(bomber);
+            if(this_dist < closest_dist)
+            {
+                closest_dist = this_dist;
+                closest_pt = colliding_items[i]->pos();
+                has_target = true;
+            }
+        }
+        else if(bigbomber)
+        {
+            double this_dist = distanceTo(bigbomber);
             if(this_dist < closest_dist)
             {
                 closest_dist = this_dist;

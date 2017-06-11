@@ -13,10 +13,6 @@
         <file>image/archer.png</file>
         <file>image/rogue.png</file>
         <file>image/sniper.png</file>
-        <file>image/knight_icon.png</file>
-        <file>image/archer_icon.png</file>
-        <file>image/sniper_icon.png</file>
-        <file>image/rogue_icon.png</file>
         <file>image/loss.jpg</file>
         <file>image/win.jpg</file>
         <file>image/knight_c.png</file>
@@ -24,5 +20,48 @@
         <file>image/sniper_c.png</file>
         <file>image/rogue_c.png</file>
         <file>image/bgm.mp3</file>
+        <file>image/Pause.jpg</file>
+        <file>image/deadpool.png</file>
+        <file>image/champions2/water_element.png</file>
+        <file>image/champions2/warrior.png</file>
+        <file>image/champions2/vampire.png</file>
+        <file>image/champions2/spearman.png</file>
+        <file>image/champions2/shieledbearer.png</file>
+        <file>image/champions2/paladin.png</file>
+        <file>image/champions2/machinegun.png</file>
+        <file>image/champions2/heavyspearman.png</file>
+        <file>image/champions2/heavyshieldbearer.png</file>
+        <file>image/champions2/fire_element.png</file>
+        <file>image/champions2/earth_element.png</file>
+        <file>image/champions2/dragon.png</file>
+        <file>image/champions2/crossbowman.png</file>
+        <file>image/champions2/bullet.png</file>
+        <file>image/champions2/bomber.png</file>
+        <file>image/champions2/bigbomber.png</file>
+        <file>image/champions2/autocannon.png</file>
+        <file>image/champions2/berserker.png</file>
+        <file>image/championicon/water_element_icon.png</file>
+        <file>image/championicon/warrior_icon.png</file>
+        <file>image/championicon/vampire_icon.png</file>
+        <file>image/championicon/spearman_icon.png</file>
+        <file>image/championicon/sniper_icon.png</file>
+        <file>image/championicon/shieldbearer_icon.png</file>
+        <file>image/championicon/rogue_icon.png</file>
+        <file>image/championicon/paladin_icon.png</file>
+        <file>image/championicon/machinegun_icon.png</file>
+        <file>image/championicon/knight_icon.png</file>
+        <file>image/championicon/heavyspearman_icon.png</file>
+        <file>image/championicon/heavyshieldbearer_icon.png</file>
+        <file>image/championicon/fire_element_icon.png</file>
+        <file>image/championicon/earth_element_icon.png</file>
+        <file>image/championicon/dragon_icon.png</file>
+        <file>image/championicon/crossbowman_icon.png</file>
+        <file>image/championicon/bomber_icon.png</file>
+        <file>image/championicon/bigbomber_icon.png</file>
+        <file>image/championicon/berserker_icon.png</file>
+        <file>image/championicon/autocannon_icon.png</file>
+        <file>image/championicon/archer_icon.png</file>
+        <file>image/fire.gif</file>
+        <file>image/raw.gif</file>
     </qresource>
 </RCC>

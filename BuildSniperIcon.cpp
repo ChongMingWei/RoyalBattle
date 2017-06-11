@@ -5,7 +5,7 @@ extern Game * game;
 
 BuildSniperIcon::BuildSniperIcon(QGraphicsItem *parent):QGraphicsPixmapItem(parent)
     {
-        setPixmap(QPixmap(":/image/sniper_icon.png"));
+        setPixmap(QPixmap(":/image/championicon/sniper_icon.png"));
     }
 void BuildSniperIcon::mousePressEvent(QGraphicsSceneMouseEvent *event)
     {
